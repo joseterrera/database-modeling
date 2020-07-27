@@ -29,28 +29,19 @@ CREATE TABLE visits (
 )
 
 
--- CREATE TABLE doctors
--- (
---   id SERIAL PRIMARY KEY,
---   name TEXT NOT NULL,
---   specialty TEXT NOT NULL,
---   location TEXT NOT NULL,
---   patients_this_doctor_has INTEGER REFERENCES patient ON DELETE CASCADE
--- );
+CREATE TABLE diseases (
+  id SERIAL PRIMARY KEY
+  name TEXT NOT NULL
+  description TEXT NOT NULL
+)
 
 
--- CREATE TABLE patients (
---   patient_id SERIAL PRIMARY KEY,
---   patient_name TEXT NOT NULL,
---   insurance TEXT NOT NULL,
---   birthday TEXT NOT NULL,
--- );
+CREATE TABLE diagnosis (
+  id SERIAL PRIMARY KEY
+  visit_id INTEGER REFERENCES visits
+  disease_id INTEGER REFERENCES diseases
+  notes TEXT
 
+)
 
--- CREATE TABLE diseases (
---   id
---   name
---   -- Many patients may have many diseases
---   patient_id INTEGER REFERENCES patient ON DELETE CASCADE
--- )
 
