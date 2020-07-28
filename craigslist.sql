@@ -6,7 +6,11 @@ DROP DATABASE IF EXISTS craigslist;
 CREATE DATABASE craigslist;
 
 \c craigslist
-
+-- users will share a connection with reg90n, each user will have a preferred location
+-- posts will share a connection with all other tables:
+  -- 1. a user can have many posts
+  -- 2. a user will post in one category
+  -- 3. a user will post in one region
 
 
 CREATE TABLE users (
