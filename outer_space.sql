@@ -26,3 +26,7 @@ VALUES
   ('Neptune', 164.8, 'The Sun', 'Milky Way', '{"Naiad", "Thalassa", "Despina", "Galatea", "Larissa", "S/2004 N 1", "Proteus", "Triton", "Nereid", "Halimede", "Sao", "Laomedeia", "Psamathe", "Neso"}'),
   ('Proxima Centauri b', 0.03, 'Proxima Centauri', 'Milky Way', '{}'),
   ('Gliese 876 b', 0.23, 'Gliese 876', 'Milky Way', '{}');
+
+
+  -- I would add a moons table with an id that references to planets, and instead of having an 
+  -- array on planets, I will add moon_id.
