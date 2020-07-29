@@ -36,9 +36,9 @@ CREATE TABLE posts (
   id SERIAL PRIMARY KEY,
   title TEXT NOT NULL,
   description TEXT NOT NULL,
-  user_id INTEGER,
-  category_id INTEGER,
-  location_id INTEGER 
+  user_id INTEGER REFERENCES users,
+  category_id INTEGER REFERENCES categories,
+  location_id INTEGER REFERENCES region
 
 );
 
