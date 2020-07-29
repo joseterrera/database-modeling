@@ -7,11 +7,23 @@ CREATE DATABASE soccer_league;
 
 \c soccer_league
 
-CREATE TABLE teams ()
+CREATE TABLE teams (
+  id SERIAL PRIMARY KEY,
+  name TEXT NOT NULL,
+  city TEXT NOT NULL
+);
 
-CREATE TABLE players ()
+CREATE TABLE players (
+  id SERIAL PRIMARY KEY,
+  name TEXT NOT NULL,
+  birthday TEXT NOT NULL,
+  height TEXT NOT NULL,
+  team_id INTEGER REFERENCES teams
+);
 
-CREATE TABLE referees ()
+CREATE TABLE referees (
+  
+)
 
 CREATE TABLE lineups ()
 
