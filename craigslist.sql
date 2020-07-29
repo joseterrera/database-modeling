@@ -44,15 +44,6 @@ CREATE TABLE posts (
 
 
 
-
-INSERT INTO users
-  (id, username, password, location)
-VALUES
-  (1, 'The Sun', 'Password1', 1),
-  (2, 'The Sunssset', 'Password2', 2),
-  (3, 'Theeeee Sun', 'Password3', 3);
-
-
 INSERT INTO region
   (id, location)
 VALUES
@@ -61,6 +52,12 @@ VALUES
   (3, 'Nueva York'); 
 
 
+INSERT INTO users
+  (id, username, password, location)
+VALUES
+  (1, 'The Sun', 'Password1', 1),
+  (2, 'The Sunssset', 'Password2', 2),
+  (3, 'Theeeee Sun', 'Password3', 3);
 
 
 INSERT INTO categories
