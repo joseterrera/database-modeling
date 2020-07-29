@@ -15,38 +15,39 @@ CREATE DATABASE doctors;
 -- will also share a connection with the visits table
 
 CREATE TABLE doctors (
-  id SERIAL PRIMARY KEY
+  id SERIAL PRIMARY KEY,
   name TEXT NOT NULL,
   specialty TEXT NOT NULL
+);
 
-)
 
-CREATE TABLE patients (
-  id SERIAL PRIMARY KEY
-  insurance TEXT NOT NULL
+CREATE TABLE patients
+(
+  id SERIAL PRIMARY KEY,
+  insurance TEXT NOT NULL,
   birthday TEXT not NULL
-)
+);
 
 CREATE TABLE diseases (
-  id SERIAL PRIMARY KEY
-  name TEXT NOT NULL
+  id SERIAL PRIMARY KEY,
+  name TEXT NOT NULL,
   description TEXT NOT NULL
-)
+);
 
 CREATE TABLE visits (
-  id SERIAL PRIMARY KEY
-  doctor_id INTEGER REFERENCES doctors
+  id SERIAL PRIMARY KEY,
+  doctor_id INTEGER REFERENCES doctors,
   patient_id INTEGER REFERENCES patients
-)
+);
 
 
 CREATE TABLE diagnosis (
-  id SERIAL PRIMARY KEY
-  visit_id INTEGER REFERENCES visits
-  disease_id INTEGER REFERENCES diseases
+  id SERIAL PRIMARY KEY,
+  visit_id INTEGER REFERENCES visits,
+  disease_id INTEGER REFERENCES diseases,
   notes TEXT
 
-)
+);
 
 
 INSERT INTO doctors
@@ -60,9 +61,9 @@ VALUES
 INSERT INTO patients 
   (id, insurance, birthday)
 VALUES
-  (1, 'Finch', '33B', '2018-04-08 09:00:00'), 
-  (2, 'Gathercoal', '8A', '2018-12-19 12:45:00'),
-  (3, 'Pauley', '12F', '2018-01-02 07:00:00'); 
+  (1, 'Finch', '2018-04-08 09:00:00'), 
+  (2, 'Gathercoal', '2018-12-19 12:45:00'),
+  (3, 'Pauley',  '2018-01-02 07:00:00'); 
 
 
 INSERT INTO diseases
@@ -78,12 +79,12 @@ INSERT INTO visits
 VALUES
   (1,2,2),
   (2,2,1),
-  (3,3,3)
+  (3,3,3);
 
 
 INSERT INTO  diagnosis
-  (id, visit_id, patient_id)
+  (id, visit_id, disease_id)
 VALUES
   (1,2,2),
   (2,2,1),
-  (3,3,3)
+  (3,3,3);
